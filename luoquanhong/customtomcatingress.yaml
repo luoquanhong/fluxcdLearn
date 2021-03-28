@@ -4,7 +4,7 @@ metadata:
   name: customtomcat-ingress
   namespace: default
   labels:
-    app : customtomcat
+    app: customtomcat
 spec:
   rules:
     - host: wahaha.luoquanhong.com
@@ -15,6 +15,7 @@ spec:
                 name: customctomcat-service
                 port:
                   name: web
+#                  number: 8180
 #                  number: 8180
             path: /customtomcat
             pathType: Exact
