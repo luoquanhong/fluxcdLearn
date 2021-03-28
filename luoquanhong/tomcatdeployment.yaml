@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-deployment
+  namespace: default
+  labels:
+    app: customtomcat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customtomcat
+  template:
+    metadata:
+      labels:
+        app: customtomcat
+    spec:
+      containers:
+        - name: tomcatcontainer
+          image: customtomcat:latest
+          imagePullPolicy: IfNotPresent
+#          ports:
+#            - containerPort: 8080
+#              hostPort: 8280
