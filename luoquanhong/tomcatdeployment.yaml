@@ -19,6 +19,6 @@ spec:
         - name: tomcatcontainer
           image: customtomcat:latest
           imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 8080
-              hostPort: 8280
+#          ports:
+#            - containerPort: 8080
+#              hostPort: 8280
