@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: customtomcat-ingress
+  namespace: default
+  labels:
+    app : customtomcat
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              service:
+                name: customctomcat-service
+                port:
+                  name: web
+#                  number: 8180
+            path: /customtomcat
+            pathType: Exact
